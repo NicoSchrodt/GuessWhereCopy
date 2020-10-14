@@ -25,13 +25,13 @@
 
     -   [3. Specific Requirements](#3-specific-requirements)
 
-        -   [3.1 Functionality – Data Backend](#31-functionality--data-backend)
+        -   [3.1 Functionality â€“ Data Backend](#31-functionality--data-backend)
 
             -   [3.1.1 Read data given over API endpoints](#311-read-data-given-over-api-endpoints)
             -   [3.1.2 Parse data](#312-parse-data)
             -   [3.1.3 Provide data](#313-provide-data)
 
-        -   [3.2 Functionality – User Interface](#32-functionality--user-interface)
+        -   [3.2 Functionality â€“ User Interface](#32-functionality--user-interface)
 
             -   [3.2.1 User system](#321-user-system)
             -   [3.2.3 Flashcard boxes](#323-flashcard-boxes)
@@ -85,8 +85,26 @@
 ## 1. Introduction
 
 ### 1.1 Purpose
+This Software Requirements Specification (SRS) describes all specifications for the application "GuessWhere". It includes an overview about this project and its vision, detailed information about the planned features and boundary conditions of the development process.
 
 ### 1.2 Scope
+The project is going to be realized as an Android App.  
+  
+Planned Subsystems are: 
+* The Game:  
+The game is the essential part of the app. Game sessions should be visualized as postings including relevant information about the session. Those should be partly standardized by a form with a free text option for specifics. The data must be stored accordingly.
+
+* Account System:  
+Users can create accounts to save their progress made in the game. User data must be stored alongside the posting data.
+
+* Friend List:  
+Once the account system is created there will be the option to mark users as favorites.
+
+* User Ranking:
+There should be a leaderboard for users to compare themselves amongst each other.
+
+* Storing Data:  
+User data for accounts and possibly profiles has to be stored. Also game statistics have to be stored in order to be used for the leaderboard.
 
 ### 1.3 Definitions, Acronyms and Abbreviations
 
@@ -126,7 +144,7 @@
 
 ## 3. Specific Requirements
 
-### 3.1 Functionality – Data Backend
+### 3.1 Functionality â€“ Data Backend
 
 #### 3.1.1 Read data given over API endpoints
 
@@ -134,7 +152,7 @@
 
 #### 3.1.3 Provide data
 
-### 3.2 Functionality – User Interface
+### 3.2 Functionality â€“ User Interface
 
 #### 3.2.1 User system
 

@@ -1,8 +1,8 @@
-# littleBeasts - Software Requirements Specification
+# GuessWhere - Software Requirements Specification
 
 ## Table of Contents
 
--   [Flashcard Community - Software Requirements Specification](#flashcard-community---software-requirements-specification)
+-   [GuessWhereTeam - Software Requirements Specification](#guesswhereteam---software-requirements-specification)
 
     -   [Table of Contents](#table-of-contents)
 
@@ -155,14 +155,6 @@ Possibly:
 3.1.8 A versus mode
 3.1.9 A chat function
 
-The User should be able to:
-    - create an account
-    - change settings on this account
-    - play the game
-    - look at a leaderboard
-    - look at their own statistics
-    - send other players friend invites
-
 #### 3.1.1 The Game
     
 #### 3.1.2 Interface
@@ -177,9 +169,9 @@ The User should be able to:
 
 #### 3.1.7 Friends
 
-#### 3.1.8 A versus mode
+#### 3.1.8 Versus mode
 
-#### 3.1.9 A chat function
+#### 3.1.9 Chat function
 
 ### 3.2 Reliability
 

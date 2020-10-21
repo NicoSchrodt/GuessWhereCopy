@@ -18,32 +18,39 @@
 
         -   [2.1 Vision](#21-vision)
 
-    -   [2.2 Product perspective](#22-product-perspective)
+        -   [2.2 Product perspective](#22-product-perspective)
 
         -   [2.3 User characteristics](#23-user-characteristics)
+    
         -   [2.4 Dependencies](#24-dependencies)
 
     -   [3. Specific Requirements](#3-specific-requirements)
 
-        -   [3.1 Functionality – Data Backend](#31-functionality--data-backend)
-
-            -   [3.1.1 Read data given over API endpoints](#311-read-data-given-over-api-endpoints)
-            -   [3.1.2 Parse data](#312-parse-data)
-            -   [3.1.3 Provide data](#313-provide-data)
+        -   [3.1 Functionality](#31-functionality)
+        
+            - [3.1.1 The Game](#311-the-game)
+            - [3.1.2 Interface](#312-interface)
+            - [3.1.3 User accounts](#313-user-accounts)
+            - [3.1.4 Database](#314-database)
+            - [3.1.5 Statistics](#315-statistics)
+            - [3.1.6 Leaderboard](#316-leaderboard)
+            - [3.1.7 Friends](#317-friends)
+            - [3.1.8 Versus mode](#318-versus-mode)
+            - [3.1.9 Chat function](#319-chat-function)
 
         -   [3.2 Reliability](#32-reliability)
 
-            -   [3.4.1 Availability](#341-availability)
-            -   [3.4.2 MTBF, MTTR](#342-mtbf-mttr)
-            -   [3.4.3 Accuracy](#343-accuracy)
-            -   [3.4.4 Bug classes](#344-bug-classes)
+            -   [3.2.1 Availability](#321-availability)
+            -   [3.2.2 MTBF, MTTR](#322-mtbf-mttr)
+            -   [3.2.3 Accuracy](#323-accuracy)
+            -   [3.2.4 Bug classes](#324-bug-classes)
 
         -   [3.3 Performance](#33-performance)
 
-            -   [3.5.1 Response time](#351-response-time)
-            -   [3.5.2 Throughput](#352-throughput)
-            -   [3.5.3 Capacity](#353-capacity)
-            -   [3.5.4 Resource utilization](#354-resource-utilization)
+            -   [3.3.1 Response time](#331-response-time)
+            -   [3.3.2 Throughput](#332-throughput)
+            -   [3.3.3 Capacity](#333-capacity)
+            -   [3.3.4 Resource utilization](#334-resource-utilization)
 
         -   [3.4 Supportability](#34-supportability)
 
@@ -140,15 +147,14 @@ This section explains all of the functional requierements and the order in which
 3.1.1 The Game
 3.1.2 Interface
 3.1.3 User accounts
-3.1.3 Database
-3.1.4 Statistics
-3.1.5 Leaderboard
-3.1.6 Friends
+3.1.4 Database
+3.1.5 Statistics
+3.1.6 Leaderboard
+3.1.7 Friends
 Possibly:
-3.1.7 A versus mode
-3.1.8 A chat function
+3.1.8 A versus mode
+3.1.9 A chat function
 
-#### 3.1.1 The Game
 The User should be able to:
     - create an account
     - change settings on this account
@@ -156,24 +162,24 @@ The User should be able to:
     - look at a leaderboard
     - look at their own statistics
     - send other players friend invites
+
+#### 3.1.1 The Game
     
 #### 3.1.2 Interface
 
 #### 3.1.3 User accounts
 
-#### 3.1.3 User accounts
+#### 3.1.4 Database
 
-#### 3.1.3 Database
+#### 3.1.5 Statistics
 
-#### 3.1.4 Statistics
+#### 3.1.6 Leaderboard
 
-#### 3.1.5 Leaderboard
+#### 3.1.7 Friends
 
-#### 3.1.6 Friends
+#### 3.1.8 A versus mode
 
-#### 3.1.7 A versus mode
-
-#### 3.1.8 A chat function
+#### 3.1.9 A chat function
 
 ### 3.2 Reliability
 

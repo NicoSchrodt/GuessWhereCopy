@@ -34,9 +34,7 @@
         -   [3.2 Functionality – User Interface](#32-functionality--user-interface)
 
             -   [3.2.1 User system](#321-user-system)
-            -   [3.2.3 Flashcard boxes](#323-flashcard-boxes)
-            -   [3.2.4 Flashcards](#324-flashcards)
-            -   [3.2.5 Statistics](#325-statistics)
+            -   [3.2.2 Statistics](#322-statistics)
 
         -   [3.3 Usability](#33-usability)
 
@@ -135,15 +133,19 @@ User data for accounts and possibly profiles has to be stored. Also game statist
 ## 2. Overall Description
 
 ### 2.1 Vision
+The app we want to create is a game where you are shown a picture from somewhere around the world and you have to point somewhere on the world map where you think this location is. The closer you are the more points you get. We were inspired by several other games that are similar to our idea. Most of these are either browser games or are badly implemented f.e. with lots of ads or paylocked-content. We plan to create this without those "features".
 
 ## 2.2 Product perspective
+In addition to the game, we want to implement several other features that are supposed to make the game experience even better. Those are for example a general account system, a database, a leaderboard and friendslist. 
 
 ### 2.3 User characteristics
+A user is defined by a Username, an unchangeable ID, a score and a list of ID's they're friends with. 
 
 ### 2.4 Dependencies
+Not decided yet, though we are probably going to use python for the backend.
 
 ## 3. Specific Requirements
-
+Not specified yet.
 ### 3.1 Functionality – Data Backend
 
 #### 3.1.1 Read data given over API endpoints
@@ -153,12 +155,16 @@ User data for accounts and possibly profiles has to be stored. Also game statist
 #### 3.1.3 Provide data
 
 ### 3.2 Functionality – User Interface
+In this chapter the requirements for the user interface are specified.
 
 #### 3.2.1 User system
-
-#### 3.2.3 Flashcard boxes
-
-#### 3.2.4 Flashcards
+The User should be able to:
+    - create an account
+    - change settings on this account
+    - play the game
+    - look at a leaderboard
+    - look at their own statistics
+    - send other players friend invites
 
 #### 3.2.5 Statistics
 

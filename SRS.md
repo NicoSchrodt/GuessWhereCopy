@@ -126,6 +126,7 @@ User data for accounts and possibly profiles has to be stored. Also game statist
 | [GitHub](https://github.com/Eightdays1/guesswhere)                                                    | 21/10/2020 |
 
 ### 1.5 Overview
+![OUCD](./UseCaseDiagram.png)
 
 ## 2. Overall Description
 
@@ -262,3 +263,6 @@ To Be Determined
 
 ## 4. Supporting Information
 To Be Determined
+
+<!-- Picture-Link definitions: -->
+[OUCD]: https://github.com/Eightdays1/guesswhere/blob/main/UseCaseDiagram.png "Overall Use Case Diagram"

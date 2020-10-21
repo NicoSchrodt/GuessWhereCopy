@@ -156,73 +156,109 @@ Possibly:
 3.1.9 A chat function
 
 #### 3.1.1 The Game
-    
+First we need to create a running app in which you can play the game we described above. This process will probably take the longest.
+
 #### 3.1.2 Interface
+Once the game is running an interface needs to be created. This includes thing like buttons labeled with 'Play', 'Settings', etc.
 
 #### 3.1.3 User accounts
+Next the possibility of creating accounts and saving your data will be implemented. This forms the basis for the steps 4 to 7.
 
 #### 3.1.4 Database
+The data collected through the user accounts needs to be stored in a central, accesible place. For this we'll connect the app to a database.
 
 #### 3.1.5 Statistics
+Once the database is running, the user should be able to access it. This will be visible in a statistics window.
 
 #### 3.1.6 Leaderboard
+From there the database and the statistics can be accessed. With this basis we'll create a leaderboard which all users can look at.
 
 #### 3.1.7 Friends
+User's should be able to be friends with other players. At first this only makes it easier to look at each others stats. In chapter 3.1.8 the function of a versus mode may be added.
 
 #### 3.1.8 Versus mode
+Like in other apps (f.e. Quizduell) a versus mode shall be implemented. In ~3 rounds the players will take turns to guess their location. At the end a winner is declared.
 
 #### 3.1.9 Chat function
+The least important feature is the chat function. Users should be able to communicate with each other in versus mode. If there is time left, this will be implemented as well.
 
 ### 3.2 Reliability
+To Be Determined
 
 #### 3.2.1 Availability
+To Be Determined
 
 #### 3.2.2 MTBF, MTTR
+To Be Determined
 
 #### 3.2.3 Accuracy
+To Be Determined
 
 #### 3.2.4 Bug classes
+To Be Determined
 
 ### 3.3 Performance
+To Be Determined
 
 #### 3.3.1 Response time
+To Be Determined
 
 #### 3.3.2 Throughput
+To Be Determined
 
 #### 3.3.3 Capacity
+To Be Determined
 
 #### 3.3.4 Resource utilization
+To Be Determined
 
 ### 3.4 Supportability
+To Be Determined
 
 ### 3.5 Design Constraints
+To Be Determined
 
 #### 3.5.1 Development tools
+To Be Determined
 
 #### 3.5.2 Spring Boot
+To Be Determined
 
 #### 3.5.3 ReactJS
+To Be Determined
 
 #### 3.5.4 Supported Platforms
+To Be Determined
 
 ### 3.6 Online User Documentation and Help System Requirements
+To Be Determined
 
 ### 3.7 Purchased Components
+To Be Determined
 
 ### 3.8 Interfaces
+To Be Determined
 
 #### 3.8.1 User Interfaces
+To Be Determined
 
 #### 3.8.2 Hardware Interfaces
+To Be Determined
 
 #### 3.8.3 Software Interfaces
+To Be Determined
 
 #### 3.8.4 Communications Interfaces
+To Be Determined
 
 ### 3.9 Licensing Requirements
+To Be Determined
 
 ### 3.10 Legal, Copyright and other Notices
+To Be Determined
 
 ### 3.11 Applicable Standards
+To Be Determined
 
 ## 4. Supporting Information
+To Be Determined

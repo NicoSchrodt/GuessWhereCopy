@@ -31,52 +31,45 @@
             -   [3.1.2 Parse data](#312-parse-data)
             -   [3.1.3 Provide data](#313-provide-data)
 
-        -   [3.2 Functionality – User Interface](#32-functionality--user-interface)
-
-            -   [3.2.1 User system](#321-user-system)
-            -   [3.2.2 Statistics](#322-statistics)
-
-        -   [3.3 Usability](#33-usability)
-
-        -   [3.4 Reliability](#34-reliability)
+        -   [3.2 Reliability](#32-reliability)
 
             -   [3.4.1 Availability](#341-availability)
             -   [3.4.2 MTBF, MTTR](#342-mtbf-mttr)
             -   [3.4.3 Accuracy](#343-accuracy)
             -   [3.4.4 Bug classes](#344-bug-classes)
 
-        -   [3.5 Performance](#35-performance)
+        -   [3.3 Performance](#33-performance)
 
             -   [3.5.1 Response time](#351-response-time)
             -   [3.5.2 Throughput](#352-throughput)
             -   [3.5.3 Capacity](#353-capacity)
             -   [3.5.4 Resource utilization](#354-resource-utilization)
 
-        -   [3.6 Supportability](#36-supportability)
+        -   [3.4 Supportability](#34-supportability)
 
-        -   [3.7 Design Constraints](#37-design-constraints)
+        -   [3.5 Design Constraints](#35-design-constraints)
 
-            -   [3.7.1 Development tools](#371-development-tools)
-            -   [3.7.2 Spring Boot](#372-spring-boot)
-            -   [3.7.3 ReactJS](#373-reactjs)
-            -   [3.7.4 Supported Platforms](#374-supported-platforms)
+            -   [3.5.1 Development tools](#351-development-tools)
+            -   [3.5.2 Spring Boot](#352-spring-boot)
+            -   [3.5.3 ReactJS](#353-reactjs)
+            -   [3.5.4 Supported Platforms](#354-supported-platforms)
 
-        -   [3.8 Online User Documentation and Help System Requirements](#38-online-user-documentation-and-help-system-requirements)
+        -   [3.6 Online User Documentation and Help System Requirements](#36-online-user-documentation-and-help-system-requirements)
 
-        -   [3.9 Purchased Components](#39-purchased-components)
+        -   [3.7 Purchased Components](#37-purchased-components)
 
-        -   [3.10 Interfaces](#310-interfaces)
+        -   [3.8 Interfaces](#38-interfaces)
 
-            -   [3.10.1 User Interfaces](#3101-user-interfaces)
-            -   [3.10.2 Hardware Interfaces](#3102-hardware-interfaces)
-            -   [3.10.3 Software Interfaces](#3103-software-interfaces)
-            -   [3.10.4 Communications Interfaces](#3104-communications-interfaces)
+            -   [3.8.1 User Interfaces](#381-user-interfaces)
+            -   [3.8.2 Hardware Interfaces](#382-hardware-interfaces)
+            -   [3.8.3 Software Interfaces](#383-software-interfaces)
+            -   [3.8.4 Communications Interfaces](#384-communications-interfaces)
 
-        -   [3.11 Licensing Requirements](#311-licensing-requirements)
+        -   [3.9 Licensing Requirements](#39-licensing-requirements)
 
-        -   [3.12 Legal, Copyright and other Notices](#312-legal-copyright-and-other-notices)
+        -   [3.10 Legal, Copyright and other Notices](#310-legal-copyright-and-other-notices)
 
-        -   [3.13 Applicable Standards](#313-applicable-standards)
+        -   [3.11 Applicable Standards](#311-applicable-standards)
 
     -   [4. Supporting Information](#4-supporting-information)
 
@@ -122,11 +115,8 @@ User data for accounts and possibly profiles has to be stored. Also game statist
 
 | Title                                                                                                 | Date       |
 | ----------------------------------------------------------------------------------------------------- | ---------- |
-| [Blog](https://flashcardcommunity.wordpress.com/)                                                     | 17/10/2018 |
-| [GitHub](https://github.com/phoenixfeder/fc-com/)                                                     | 17/10/2018 |
-| [Spring Boot](https://spring.io/projects/spring-boot)                                                 | 19/10/2018 |
-| [ReactJS](https://reactjs.org/)                                                                       | 19/10/2018 |
-| [Use Case Diagram](https://github.com/phoenixfeder/fc-com/blob/master/FlashCardCommunityUseCases.png) | 21/10/2018 |
+| [Blog](https://wordpress.com/page/guesswheregame.wordpress.com)                                       | 21/10/2020 |
+| [GitHub](https://github.com/Eightdays1/guesswhere)                                                    | 21/10/2020 |
 
 ### 1.5 Overview
 
@@ -145,19 +135,20 @@ A user is defined by a Username, an unchangeable ID, a score and a list of ID's 
 Not decided yet, though we are probably going to use python for the backend.
 
 ## 3. Specific Requirements
-Not specified yet.
-### 3.1 Functionality – Data Backend
+### 3.1 Functionality
+This section explains all of the functional requierements and the order in which we plan to implement them.
+3.1.1 The Game
+3.1.2 Interface
+3.1.3 User accounts
+3.1.3 Database
+3.1.4 Statistics
+3.1.5 Leaderboard
+3.1.6 Friends
+Possibly:
+3.1.7 A versus mode
+3.1.8 A chat function
 
-#### 3.1.1 Read data given over API endpoints
-
-#### 3.1.2 Parse data
-
-#### 3.1.3 Provide data
-
-### 3.2 Functionality – User Interface
-In this chapter the requirements for the user interface are specified.
-
-#### 3.2.1 User system
+#### 3.1.1 The Game
 The User should be able to:
     - create an account
     - change settings on this account
@@ -165,61 +156,75 @@ The User should be able to:
     - look at a leaderboard
     - look at their own statistics
     - send other players friend invites
+    
+#### 3.1.2 Interface
 
-#### 3.2.5 Statistics
+#### 3.1.3 User accounts
 
-### 3.3 Usability
+#### 3.1.3 User accounts
 
-### 3.4 Reliability
+#### 3.1.3 Database
 
-#### 3.4.1 Availability
+#### 3.1.4 Statistics
 
-#### 3.4.2 MTBF, MTTR
+#### 3.1.5 Leaderboard
 
-#### 3.4.3 Accuracy
+#### 3.1.6 Friends
 
-#### 3.4.4 Bug classes
+#### 3.1.7 A versus mode
 
-### 3.5 Performance
+#### 3.1.8 A chat function
 
-#### 3.5.1 Response time
+### 3.2 Reliability
 
-#### 3.5.2 Throughput
+#### 3.2.1 Availability
 
-#### 3.5.3 Capacity
+#### 3.2.2 MTBF, MTTR
 
-#### 3.5.4 Resource utilization
+#### 3.2.3 Accuracy
 
-### 3.6 Supportability
+#### 3.2.4 Bug classes
 
-### 3.7 Design Constraints
+### 3.3 Performance
 
-#### 3.7.1 Development tools
+#### 3.3.1 Response time
 
-#### 3.7.2 Spring Boot
+#### 3.3.2 Throughput
 
-#### 3.7.3 ReactJS
+#### 3.3.3 Capacity
 
-#### 3.7.4 Supported Platforms
+#### 3.3.4 Resource utilization
 
-### 3.8 Online User Documentation and Help System Requirements
+### 3.4 Supportability
 
-### 3.9 Purchased Components
+### 3.5 Design Constraints
 
-### 3.10 Interfaces
+#### 3.5.1 Development tools
 
-#### 3.10.1 User Interfaces
+#### 3.5.2 Spring Boot
 
-#### 3.10.2 Hardware Interfaces
+#### 3.5.3 ReactJS
 
-#### 3.10.3 Software Interfaces
+#### 3.5.4 Supported Platforms
 
-#### 3.10.4 Communications Interfaces
+### 3.6 Online User Documentation and Help System Requirements
 
-### 3.11 Licensing Requirements
+### 3.7 Purchased Components
 
-### 3.12 Legal, Copyright and other Notices
+### 3.8 Interfaces
 
-### 3.13 Applicable Standards
+#### 3.8.1 User Interfaces
+
+#### 3.8.2 Hardware Interfaces
+
+#### 3.8.3 Software Interfaces
+
+#### 3.8.4 Communications Interfaces
+
+### 3.9 Licensing Requirements
+
+### 3.10 Legal, Copyright and other Notices
+
+### 3.11 Applicable Standards
 
 ## 4. Supporting Information

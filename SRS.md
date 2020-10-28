@@ -158,6 +158,7 @@ Possibly:
 
 #### 3.1.1 The Game
 First we need to create a running app in which you can play the game we described above. This process will probably take the longest.
+https://github.com/Eightdays1/guesswhere/blob/main/Use-Case_StartGame.md
 
 #### 3.1.2 Interface
 Once the game is running an interface needs to be created. This includes thing like buttons labeled with 'Play', 'Settings', etc.
@@ -179,6 +180,7 @@ User's should be able to be friends with other players. At first this only makes
 
 #### 3.1.8 Versus mode
 Like in other apps (f.e. Quizduell) a versus mode shall be implemented. In ~3 rounds the players will take turns to guess their location. At the end a winner is declared.
+https://github.com/Eightdays1/guesswhere/blob/main/Use-Case_Challenge_User.md
 
 #### 3.1.9 Chat function
 The least important feature is the chat function. Users should be able to communicate with each other in versus mode. If there is time left, this will be implemented as well.

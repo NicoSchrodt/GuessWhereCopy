@@ -4,14 +4,14 @@ Feature: Challange User
 
 Scenario: User Sends Challange Request successful
 
-When User presses "Send Challange Request"
 Given Request was send
+When User presses "Send Challange Request"
 Then I should see "Success Message"
 
 Scenario: User Sends Challange Request failed
 
-When User presses "Send Challange Request"
 Given Request was not send
+When User presses "Send Challange Request"
 Then I should see "Fail Message"
 
 Scenario: Accept Incomming Request

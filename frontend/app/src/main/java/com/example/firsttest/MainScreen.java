@@ -11,13 +11,6 @@ import android.widget.TextView;
 
 @SuppressWarnings("SpellCheckingInspection")
 public class MainScreen extends AppCompatActivity {
-
-    /*
-    private Button button_login;
-    private Button button_options;
-    private Button button_help;
-    private TextView textview_title;
-     */
     public MainScreen() {
     }
 
@@ -32,7 +25,7 @@ public class MainScreen extends AppCompatActivity {
         Button button_options = (Button) findViewById(R.id.button_options);
         Button button_help = (Button) findViewById(R.id.button_help);
         TextView textview_title = (TextView) findViewById(R.id.textview_title);
-        textview_title.setText("Test");
+        textview_title.setText("Guesswhere");
 
         button_login.setOnClickListener(new View.OnClickListener(){
             public void onClick(View view){

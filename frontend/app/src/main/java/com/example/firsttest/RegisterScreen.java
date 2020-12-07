@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.IOException;
+
 public class RegisterScreen extends AppCompatActivity {
 
     @Override
@@ -18,12 +20,12 @@ public class RegisterScreen extends AppCompatActivity {
 
         button_confirmRegister.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                return_to_Main_Screen_logged_in();
+                try_creating_user();
             }
         });
     }
 
-    private void return_to_Main_Screen_logged_in(){
+    private void clicked_confirm(){
         /*
         1. Check Database for entered Username
         -- 1: Username already in Use:
@@ -35,21 +37,35 @@ public class RegisterScreen extends AppCompatActivity {
          */
 
         //right now, simply create user and return to MainScreen
-        do_what_register_button_does();
     }
 
-    private void do_what_register_button_does(){
+    private void try_creating_user(){
         //do something
+        /*
         TextView textedit_nameRegister = (TextView) findViewById(R.id.textedit_nameRegister);
         TextView textedit_passwordRegister = (TextView) findViewById(R.id.textedit_passwordRegister);
         MainScreen.user = User.testDeleteLater(textedit_nameRegister.getText().toString(), textedit_passwordRegister.getText().toString());
         reload_main();
+         */
+        TextView textedit_nameRegister = (TextView) findViewById(R.id.textedit_nameRegister);
+        TextView textedit_passwordRegister = (TextView) findViewById(R.id.textedit_passwordRegister);
+        String Username =  textedit_nameRegister.getText().toString();
+        String Password = textedit_passwordRegister.getText().toString();
+
+        try {
+            if (Database_test.create_user(Username, Password)){
+                MainScreen.user = User.new_user_instance(Username, Password);
+                reload_main("Registered Successfully!");
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
     }
 
-    private void reload_main() {
+    private void reload_main(String message) {
         Intent intent = new Intent(RegisterScreen.this, MainScreen.class);
-        // set the new task and clear flags
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        intent.putExtra("PopupMessage", message);
         startActivity(intent);
     }
 }

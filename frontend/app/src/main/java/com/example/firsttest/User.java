@@ -3,7 +3,7 @@ package com.example.firsttest;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class User extends AppCompatActivity {
-    private String Username;
+    private final String Username;
     private String AccessToken;
 
     private User(String Usernm, String AT){
@@ -14,26 +14,20 @@ public class User extends AppCompatActivity {
     public String getUsername(){
         return Username;
     }
+    public String getAccessToken() { return AccessToken;}
 
-    public User checkCredentials(String User, String Password) {
-        int UserValid = 0;
+    public boolean checkCredentials(String User, String Password) {
+        boolean UserValid = false;
+
         //connect to database and check credentials
-        /*
-        DO STUFF
-         */
+        //
+        // DO STUFF
+        //
 
-        //if user exists with given password
-        if(UserValid == 1) {
-            User user;
-            user = new User("Test1", "Test2");
-            return user; //this should later return a User;
-        }
-        return null;
+        return UserValid;
     }
 
-    public static com.example.firsttest.User testDeleteLater(String first, String second) {
-        User user2;
-        user2 = new User(first, second);
-        return user2;
+    public static User new_user_instance(String first, String second) {
+        return new User(first, second);
     }
 }

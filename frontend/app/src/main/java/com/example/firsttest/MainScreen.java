@@ -6,6 +6,7 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
@@ -15,6 +16,8 @@ import java.io.IOException;
 @SuppressWarnings("SpellCheckingInspection")
 public class MainScreen extends AppCompatActivity {
     public static User user = null;
+    public static int whichPopup = 0;
+    public static String popupMessage = "";
     public MainScreen() {
     }
 
@@ -25,9 +28,22 @@ public class MainScreen extends AppCompatActivity {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        if (user == null) {
+        if (user == null) { //Generic Screen [Not Logged in]
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
+
+            if(whichPopup != 0){
+                switch(whichPopup){
+                    case 4:
+                        popupMessage = "You opened the Help Screen and Confirmed!";
+                        break;
+                    case 3:
+                        popupMessage = "You sucessfully logged out!";
+                        break;
+                }
+                openDialog();
+                whichPopup = 0;
+            }
 
             Button button_login = (Button) findViewById(R.id.button_login);
             Button button_help = (Button) findViewById(R.id.button_help);
@@ -38,17 +54,36 @@ public class MainScreen extends AppCompatActivity {
                 public void onClick(View view) {
                     //textview_title.setText("Du Login geklickt!");
                     try {
-                        Database_test.method();
+                        Database_test.database_check();
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                     startLoginActivity();
                 }
-
             });
-        } else {
+
+            button_help.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    startHelpActivity();
+                }
+            });
+
+        } else { //Logged in Screen
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main_loggedin);
+
+            if(whichPopup != 0){
+                switch(whichPopup){
+                    case 1:
+                        popupMessage = "You sucessfully registered!";
+                        break;
+                    case 2:
+                        popupMessage = "You sucessfully logged in!";
+                        break;
+                }
+                openDialog();
+                whichPopup = 0;
+            }
 
             Button button_play = (Button) findViewById(R.id.button_play);
             Button button_options = (Button) findViewById(R.id.button_options);
@@ -85,5 +120,15 @@ public class MainScreen extends AppCompatActivity {
         OptionsScreen.whichscreen = 0; //reset so it always displays the default version
         Intent intent = new Intent(this, OptionsScreen.class);
         startActivity(intent);
+    }
+
+    public void startHelpActivity(){
+        Intent intent = new Intent(this, HelpScreen.class);
+        startActivity(intent);
+    }
+
+    public void openDialog() {
+        Popup popup = new Popup();
+        popup.show(getSupportFragmentManager(), "label");
     }
 }

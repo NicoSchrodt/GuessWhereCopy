@@ -6,25 +6,18 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
-import java.io.Reader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 import java.io.BufferedReader;
-import java.io.DataOutputStream;
-import java.io.IOException;
 import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.nio.charset.StandardCharsets;
 
 public class Database_test extends AppCompatActivity {
 
     private static HttpURLConnection con;
 
-    public static void method() throws IOException {
+    public static void database_check() throws IOException {
         /*
         URL url = new URL("167.99.136.249/");
         HttpURLConnection urlConnection = (HttpURLConnection) url.openConnection();
@@ -61,39 +54,59 @@ public class Database_test extends AppCompatActivity {
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(conn.getInputStream()));
         String inputLine;
-        StringBuffer response = new StringBuffer();
+        //StringBuffer response = new StringBuffer();
+        StringBuilder response = new StringBuilder();
 
         while ((inputLine = in.readLine()) != null) {
             response.append(inputLine);
         }
         in.close();
 
-        //print result
         Log.d("Output", response.toString());
-        //System.out.println(response.toString());
 
+
+
+    }
+
+    public static boolean create_user(String Username, String Password) throws IOException {
+        String request        = "http://api.guesswhere.net/api.php?type=createuser";
+        URL    url            = new URL( request );
+        HttpURLConnection conn= (HttpURLConnection) url.openConnection();
+
+        //Request-Header
+        String urlParameters  = "username=" + Username + "&password=" + Password;
+        byte[] postData       = urlParameters.getBytes( StandardCharsets.UTF_8 );
+        int    postDataLength = postData.length;
+        conn.setRequestMethod( "POST" );
+
+        //Send Post-Request
+        conn.setDoOutput(true);
+        conn.setRequestProperty( "charset", "utf-8");
+
+        DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
+        wr.writeBytes(urlParameters);
+        wr.flush();
+        wr.close();
 
         /*
-        OutputStream os = conn.getOutputStream();
-        os.write(urlParameters.getBytes("UTF-8"));
-        os.close();
-        Reader bufferedReader = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
-        try( DataOutputStream wr = new DataOutputStream( conn.getOutputStream())) {
-            wr.write( postData );
-            String s = new String (postData, StandardCharsets.UTF_8);
-            //String temp = bufferedReader.toString();
-            String line = "";
+        int responseCode = conn.getResponseCode();
+        Log.d("Output","\nSending 'POST' request to URL : " + url);
+        Log.d("Output","Post parameters : " + urlParameters);
+        Log.d("Output","Response Code : " + responseCode);
+        */
+        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        String inputLine;
+        //StringBuffer response = new StringBuffer();
+        StringBuilder response = new StringBuilder();
 
-            //while((line = bufferedReader.readLine()) != null){
-            //}
-            //for (int c; (c = bufferedReader.read()) >= 0;)
-            //    Log.d("Output", Integer.toString(c));
-            Log.d("Output", line);
-            Log.d("Output", "test");
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
         }
-         */
+        in.close();
 
+        Log.d("Output", response.toString());
 
+        return response.toString().equals("{\"status\":\"user_created\"}");
     }
 }
 

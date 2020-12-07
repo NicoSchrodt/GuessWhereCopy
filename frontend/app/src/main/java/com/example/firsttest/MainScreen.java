@@ -5,9 +5,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.io.IOException;
 
 @SuppressWarnings("SpellCheckingInspection")
 public class MainScreen extends AppCompatActivity {
@@ -19,6 +22,9 @@ public class MainScreen extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
+
         if (user == null) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main);
@@ -31,6 +37,11 @@ public class MainScreen extends AppCompatActivity {
             button_login.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     //textview_title.setText("Du Login geklickt!");
+                    try {
+                        Database_test.method();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    }
                     startLoginActivity();
                 }
 
@@ -57,8 +68,8 @@ public class MainScreen extends AppCompatActivity {
                 public void onClick(View view) {
                     //textview_title.setText("Du hast die Optionen aufgerufen!");
                     user = null;
-                    finish();
-                    startActivity(getIntent());
+                    finish(); //closes MainActivity
+                    startActivity(getIntent()); //restarts Main
                 }
             });
         }
@@ -71,6 +82,7 @@ public class MainScreen extends AppCompatActivity {
     }
 
     public void startOptionsActivity(){
+        OptionsScreen.whichscreen = 0; //reset so it always displays the default version
         Intent intent = new Intent(this, OptionsScreen.class);
         startActivity(intent);
     }

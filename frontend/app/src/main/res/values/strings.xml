@@ -11,4 +11,7 @@
     <string name="play">play</string>
     <string name="hello">Hello, ...</string>
     <string name="logout">logout</string>
+    <string name="change_username">change Username</string>
+    <string name="change_password">change password</string>
+    <string name="new_password">New Password</string>
 </resources>

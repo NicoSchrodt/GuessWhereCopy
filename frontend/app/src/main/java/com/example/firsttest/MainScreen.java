@@ -34,11 +34,23 @@ public class MainScreen extends AppCompatActivity {
             }
 
         });
+
+        button_options.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View view){
+                //textview_title.setText("Du hast die Optionen aufgerufen!");
+                startOptionsActivity();
+            }
+        });
     }
 
     public void startLoginActivity() {
         Intent intent = new Intent(this, LoginScreen.class);
         //intent.putExtra(name: "user_eingabe", eingabe.getText());
+        startActivity(intent);
+    }
+
+    public void startOptionsActivity(){
+        Intent intent = new Intent(this, OptionsScreen.class);
         startActivity(intent);
     }
 }

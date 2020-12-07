@@ -42,12 +42,16 @@ public class Database_test extends AppCompatActivity {
         conn.setRequestProperty( "Content-Length", Integer.toString( postDataLength ));
         conn.setDoOutput(true);
         conn.setUseCaches( false );
-        Reader bufferedReader = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
+        BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(conn.getInputStream(), "UTF-8"));
         try( DataOutputStream wr = new DataOutputStream( conn.getOutputStream())) {
             wr.write( postData );
             String s = new String (postData, StandardCharsets.UTF_8);
-            String temp = bufferedReader.toString();
-            Log.d("Output", temp);
+            //String temp = bufferedReader.toString();
+            String line = "";
+            while((line = bufferedReader.readLine()) != null){
+            }
+            Log.d("Output", line);
+            Log.d("Output", "test");
         }
 
     }

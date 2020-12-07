@@ -6,12 +6,16 @@ public class User extends AppCompatActivity {
     private String User;
     private String AccessToken;
 
+    //produces error if it doesn't have default constructor
+    public User(){
+    }
+
     private User(String Username, String AT){
         User = Username;
         AccessToken = AT;
     }
 
-    protected User checkCredentials(String User, String Password) {
+    public User checkCredentials(String User, String Password) {
         int UserValid = 0;
         //connect to database and check credentials
         /*

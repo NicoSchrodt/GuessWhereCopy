@@ -11,6 +11,7 @@ import android.widget.TextView;
 
 @SuppressWarnings("SpellCheckingInspection")
 public class MainScreen extends AppCompatActivity {
+    User user;
     public MainScreen() {
     }
 
@@ -18,29 +19,37 @@ public class MainScreen extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        if (user == null) {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main);
 
-        Button button_login = (Button) findViewById(R.id.button_login);
-        Button button_options = (Button) findViewById(R.id.button_options);
-        Button button_help = (Button) findViewById(R.id.button_help);
-        TextView textview_title = (TextView) findViewById(R.id.textview_title);
-        textview_title.setText("Guesswhere");
+            Button button_login = (Button) findViewById(R.id.button_login);
+            Button button_help = (Button) findViewById(R.id.button_help);
+            TextView textview_title = (TextView) findViewById(R.id.textview_title);
+            textview_title.setText("Guesswhere");
 
-        button_login.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                //textview_title.setText("Du hast dich eingeloggt!");
-                startLoginActivity();
-            }
+            button_login.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    //textview_title.setText("Du Login geklickt!");
+                    startLoginActivity();
+                }
 
-        });
+            });
+        }
+        else {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.activity_main_loggedin);
 
-        button_options.setOnClickListener(new View.OnClickListener(){
-            public void onClick(View view){
-                //textview_title.setText("Du hast die Optionen aufgerufen!");
-                startOptionsActivity();
-            }
-        });
+            Button button_play = (Button) findViewById(R.id.button_play);
+            Button button_options = (Button) findViewById(R.id.button_options);
+
+            button_options.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    //textview_title.setText("Du hast die Optionen aufgerufen!");
+                    startOptionsActivity();
+                }
+            });
+        }
     }
 
     public void startLoginActivity() {

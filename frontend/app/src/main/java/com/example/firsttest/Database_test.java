@@ -15,8 +15,6 @@ import java.io.InputStreamReader;
 
 public class Database_test extends AppCompatActivity {
 
-    private static HttpURLConnection con;
-
     public static void database_check() throws IOException {
         /*
         URL url = new URL("167.99.136.249/");

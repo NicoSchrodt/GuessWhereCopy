@@ -55,17 +55,16 @@ public class RegisterScreen extends AppCompatActivity {
         try {
             if (Database_test.create_user(Username, Password)){
                 MainScreen.user = User.new_user_instance(Username, Password);
-                reload_main("Registered Successfully!");
+                reload_main();
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private void reload_main(String message) {
+    private void reload_main() {
         Intent intent = new Intent(RegisterScreen.this, MainScreen.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
-        intent.putExtra("PopupMessage", message);
         startActivity(intent);
     }
 }

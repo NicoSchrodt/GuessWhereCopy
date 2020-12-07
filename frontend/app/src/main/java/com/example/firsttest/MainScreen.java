@@ -11,7 +11,7 @@ import android.widget.TextView;
 
 @SuppressWarnings("SpellCheckingInspection")
 public class MainScreen extends AppCompatActivity {
-    User user;
+    public static User user = null;
     public MainScreen() {
     }
 
@@ -35,18 +35,30 @@ public class MainScreen extends AppCompatActivity {
                 }
 
             });
-        }
-        else {
+        } else {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main_loggedin);
 
             Button button_play = (Button) findViewById(R.id.button_play);
             Button button_options = (Button) findViewById(R.id.button_options);
+            Button button_logout = (Button) findViewById(R.id.button_logout);
+            TextView textview_greetuser = (TextView) findViewById(R.id.textview_greetuser);
+
+            textview_greetuser.setText("Hallo, " + user.getUsername());
 
             button_options.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
                     //textview_title.setText("Du hast die Optionen aufgerufen!");
                     startOptionsActivity();
+                }
+            });
+
+            button_logout.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    //textview_title.setText("Du hast die Optionen aufgerufen!");
+                    user = null;
+                    finish();
+                    startActivity(getIntent());
                 }
             });
         }

@@ -48,7 +48,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button_RegisterInstead"
+        android:id="@+id/button_registerInstead"
         android:layout_width="264dp"
         android:layout_height="60dp"
         android:text="@string/register_instead"

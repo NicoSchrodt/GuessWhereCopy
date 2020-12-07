@@ -3,16 +3,16 @@ package com.example.firsttest;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class User extends AppCompatActivity {
-    private String User;
+    private String Username;
     private String AccessToken;
 
-    //produces error if it doesn't have default constructor
-    public User(){
+    private User(String Usernm, String AT){
+        Username = Usernm;
+        AccessToken = AT;
     }
 
-    private User(String Username, String AT){
-        User = Username;
-        AccessToken = AT;
+    public String getUsername(){
+        return Username;
     }
 
     public User checkCredentials(String User, String Password) {
@@ -29,5 +29,11 @@ public class User extends AppCompatActivity {
             return user; //this should later return a User;
         }
         return null;
+    }
+
+    public static com.example.firsttest.User testDeleteLater(String first, String second) {
+        User user2;
+        user2 = new User(first, second);
+        return user2;
     }
 }

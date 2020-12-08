@@ -99,12 +99,18 @@ public class MainScreen extends AppCompatActivity {
                     startActivity(getIntent()); //restarts Main
                 }
             });
+
+            button_play.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    //textview_title.setText("Du hast die Optionen aufgerufen!");
+                    startGameActivity();
+                }
+            });
         }
     }
 
     public void startLoginActivity() {
         Intent intent = new Intent(this, LoginScreen.class);
-        //intent.putExtra(name: "user_eingabe", eingabe.getText());
         startActivity(intent);
     }
 
@@ -116,6 +122,11 @@ public class MainScreen extends AppCompatActivity {
 
     public void startHelpActivity(){
         Intent intent = new Intent(this, HelpScreen.class);
+        startActivity(intent);
+    }
+
+    public void startGameActivity(){
+        Intent intent = new Intent(this, GameScreen.class);
         startActivity(intent);
     }
 

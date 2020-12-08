@@ -14,4 +14,5 @@
     <string name="change_username">change Username</string>
     <string name="change_password">change password</string>
     <string name="new_password">New Password</string>
+    <string name="todo">TODO</string>
 </resources>

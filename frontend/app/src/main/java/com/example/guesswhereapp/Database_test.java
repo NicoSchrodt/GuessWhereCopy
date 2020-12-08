@@ -1,10 +1,13 @@
 package com.example.guesswhereapp;
 
+import android.util.Log;
+
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.DataOutputStream;
 import java.io.IOException;
 import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
@@ -165,6 +168,73 @@ public class Database_test extends AppCompatActivity {
             }
         }
         return accesstoken;
+    }
+
+    public static String getNewImage(String accesstoken) throws IOException {
+        String request        = "http://api.guesswhere.net/api.php?type=requestnewgame";
+        URL    url            = new URL( request );
+        HttpURLConnection conn= (HttpURLConnection) url.openConnection();
+
+        //Request-Header
+        String urlParameters  = "accesstoken=" + accesstoken;
+        byte[] postData       = urlParameters.getBytes( StandardCharsets.UTF_8 );
+        int    postDataLength = postData.length;
+        conn.setRequestMethod( "POST" );
+
+        //Send Post-Request
+        conn.setDoOutput(true);
+        conn.setRequestProperty( "charset", "utf-8");
+
+        DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
+        wr.writeBytes(urlParameters);
+        wr.flush();
+        wr.close();
+
+        /*
+        int responseCode = conn.getResponseCode();
+        Log.d("Output","\nSending 'POST' request to URL : " + url);
+        Log.d("Output","Post parameters : " + urlParameters);
+        Log.d("Output","Response Code : " + responseCode);
+        */
+        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        String inputLine;
+        //StringBuffer response = new StringBuffer();
+        StringBuilder response = new StringBuilder();
+
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
+
+        //parse data
+        String answer = response.toString();
+        answer = answer.replace("\"", "");
+        answer = answer.replace("{", "");
+        answer = answer.replace("}", "");
+        String status = "false";
+        String image_url = "";
+
+        Log.d("answer", answer);
+
+        //status:true,imagekey:ByOF5FN54KT82mYfa1HBdA,coordinate1:48.0803522,coordinate2:16.2948672
+
+        String[] array = answer.split(",");
+        for(String i: array){
+            if (i.startsWith("status:")){
+                status = i.substring(7);
+            }
+            if (i.startsWith("imagekey:")){
+                image_url = i.substring(9);
+            }
+            if (i.startsWith("coordinate1:")){
+                GameScreen.coordinate_1 = Float.parseFloat(i.substring(12));
+            }
+            if (i.startsWith("coordinate2:")){
+                GameScreen.coordinate_2 = Float.parseFloat(i.substring(12));
+            }
+        }
+
+        return "https://images.mapillary.com/" + image_url + "/thumb-2048.jpg";
     }
 }
 

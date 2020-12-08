@@ -52,12 +52,6 @@ public class MainScreen extends AppCompatActivity {
 
             button_login.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
-                    //textview_title.setText("Du Login geklickt!");
-                    try {
-                        Database_test.database_check();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
                     startLoginActivity();
                 }
             });

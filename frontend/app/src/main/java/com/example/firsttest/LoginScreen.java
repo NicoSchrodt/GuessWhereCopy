@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.IOException;
+
 public class LoginScreen extends AppCompatActivity {
 
     @Override
@@ -40,8 +42,20 @@ public class LoginScreen extends AppCompatActivity {
         //do something
         TextView textedit_nameLogin = (TextView) findViewById(R.id.textedit_nameLogin);
         TextView textedit_password = (TextView) findViewById(R.id.textedit_password);
-        MainScreen.user = User.testDeleteLater(textedit_nameLogin.getText().toString(), textedit_password.getText().toString());
-        reload_main();
+        String Username = textedit_nameLogin.getText().toString();
+        String Password = textedit_password.getText().toString();
+        String accesstoken = "";
+        //MainScreen.user = User.new_user_instance(textedit_nameLogin.getText().toString(), textedit_password.getText().toString());
+        try {
+            accesstoken = Database_test.request_access_token(Username, Password );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        if(!(accesstoken.equals(""))) {
+            MainScreen.user = User.new_user_instance(Username, accesstoken);
+            MainScreen.whichPopup = 2;
+            reload_main();
+        }
     }
 
     private void reload_main() {

@@ -45,9 +45,9 @@ public class Database_test extends AppCompatActivity {
         wr.close();
 
         int responseCode = conn.getResponseCode();
-        Log.d("Output","\nSending 'POST' request to URL : " + url);
-        Log.d("Output","Post parameters : " + urlParameters);
-        Log.d("Output","Response Code : " + responseCode);
+        //Log.d("Output","\nSending 'POST' request to URL : " + url);
+        //Log.d("Output","Post parameters : " + urlParameters);
+        //Log.d("Output","Response Code : " + responseCode);
 
         BufferedReader in = new BufferedReader(
                 new InputStreamReader(conn.getInputStream()));
@@ -60,7 +60,7 @@ public class Database_test extends AppCompatActivity {
         }
         in.close();
 
-        Log.d("Output", response.toString());
+        //Log.d("Output", response.toString());
 
 
 
@@ -102,9 +102,71 @@ public class Database_test extends AppCompatActivity {
         }
         in.close();
 
-        Log.d("Output", response.toString());
+        //Log.d("Output", response.toString());
 
         return response.toString().equals("{\"status\":\"user_created\"}");
+    }
+
+    public static String request_access_token(String Username, String Password) throws IOException{
+        String request        = "http://api.guesswhere.net/api.php?type=requestaccesstoken";
+        URL    url            = new URL( request );
+        HttpURLConnection conn= (HttpURLConnection) url.openConnection();
+
+        //Request-Header
+        String urlParameters  = "username=" + Username + "&password=" + Password;
+        byte[] postData       = urlParameters.getBytes( StandardCharsets.UTF_8 );
+        int    postDataLength = postData.length;
+        conn.setRequestMethod( "POST" );
+
+        //Send Post-Request
+        conn.setDoOutput(true);
+        conn.setRequestProperty( "charset", "utf-8");
+
+        DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
+        wr.writeBytes(urlParameters);
+        wr.flush();
+        wr.close();
+
+        /*
+        int responseCode = conn.getResponseCode();
+        Log.d("Output","\nSending 'POST' request to URL : " + url);
+        Log.d("Output","Post parameters : " + urlParameters);
+        Log.d("Output","Response Code : " + responseCode);
+        */
+        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        String inputLine;
+        //StringBuffer response = new StringBuffer();
+        StringBuilder response = new StringBuilder();
+
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
+
+        //Log.d("Output", response.toString());
+
+        //parse data
+        String answer = response.toString();
+        answer = answer.replace("\"", "");
+        answer = answer.replace("{", "");
+        answer = answer.replace("}", "");
+        String status = "false";
+        String accesstoken = "";
+
+        //Log.d("answer", answer);
+
+        String[] array = answer.split(",");
+        for(String i: array){
+            if (i.startsWith("status:")){
+                status= i.substring(7);
+                //Log.d("status", status);
+            }
+            if(i.startsWith("accesstoken:") && (status.equals("true"))){
+                accesstoken = i.substring(12);
+                //Log.d("accesstoken", accesstoken);
+            }
+        }
+        return accesstoken;
     }
 }
 

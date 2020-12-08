@@ -12,12 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstTest"
         android:usesCleartextTraffic="true">
-        <activity android:name="com.example.guesswhereapp.GameScreen"></activity>
-        <activity android:name="com.example.guesswhereapp.HelpScreen" />
-        <activity android:name="com.example.guesswhereapp.OptionsScreen" />
-        <activity android:name="com.example.guesswhereapp.RegisterScreen" />
-        <activity android:name="com.example.guesswhereapp.LoginScreen" />
-        <activity android:name="com.example.guesswhereapp.MainScreen">
+        <activity android:name=".StatisticsScreen"></activity>
+        <activity android:name=".GameScreen" />
+        <activity android:name=".HelpScreen" />
+        <activity android:name=".OptionsScreen" />
+        <activity android:name=".RegisterScreen" />
+        <activity android:name=".LoginScreen" />
+        <activity android:name=".MainScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

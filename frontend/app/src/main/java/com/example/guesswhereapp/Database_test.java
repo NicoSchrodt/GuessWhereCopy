@@ -236,5 +236,50 @@ public class Database_test extends AppCompatActivity {
 
         return "https://images.mapillary.com/" + image_url + "/thumb-2048.jpg";
     }
+
+    public static boolean changePassword(String username,String old_password, String new_password) throws IOException {
+        String request        = "http://api.guesswhere.net/api.php?type=changepassword";
+        URL    url            = new URL( request );
+        HttpURLConnection conn= (HttpURLConnection) url.openConnection();
+
+        //Request-Header
+        String urlParameters  = "username=" + username + "&oldpassword=" + old_password + "&newpassword=" + new_password;
+        byte[] postData       = urlParameters.getBytes( StandardCharsets.UTF_8 );
+        int    postDataLength = postData.length;
+        conn.setRequestMethod( "POST" );
+
+        //Send Post-Request
+        conn.setDoOutput(true);
+        conn.setRequestProperty( "charset", "utf-8");
+
+        DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
+        wr.writeBytes(urlParameters);
+        wr.flush();
+        wr.close();
+
+        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        String inputLine;
+        StringBuilder response = new StringBuilder();
+
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
+
+        String answer = response.toString();
+        answer = answer.replace("\"", "");
+        answer = answer.replace("{", "");
+        answer = answer.replace("}", "");
+        boolean status = false;
+
+        String[] array = answer.split(",");
+        for(String i: array){
+            if (i.startsWith("status:")){
+                status = Boolean.parseBoolean(i.substring(7));
+            }
+        }
+
+        return status;
+    }
 }
 

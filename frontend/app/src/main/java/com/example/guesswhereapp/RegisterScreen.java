@@ -25,28 +25,7 @@ public class RegisterScreen extends AppCompatActivity {
         });
     }
 
-    private void clicked_confirm(){
-        /*
-        1. Check Database for entered Username
-        -- 1: Username already in Use:
-            --> Display "Username already taken!"
-           2: Username not in Use:
-            --> Create User with entered password in database
-            --> Create User Object with entered credentials and save it in MainScreen
-            --> Return to MainScreen; delete all prior activities
-         */
-
-        //right now, simply create user and return to MainScreen
-    }
-
     private void try_creating_user(){
-        //do something
-        /*
-        TextView textedit_nameRegister = (TextView) findViewById(R.id.textedit_nameRegister);
-        TextView textedit_passwordRegister = (TextView) findViewById(R.id.textedit_passwordRegister);
-        MainScreen.user = User.testDeleteLater(textedit_nameRegister.getText().toString(), textedit_passwordRegister.getText().toString());
-        reload_main();
-         */
         TextView textedit_nameRegister = (TextView) findViewById(R.id.textedit_nameRegister);
         TextView textedit_passwordRegister = (TextView) findViewById(R.id.textedit_passwordRegister);
         String Username =  textedit_nameRegister.getText().toString();
@@ -72,7 +51,7 @@ public class RegisterScreen extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void openDialog() {
+    private void openDialog() {
         MainScreen.popupMessage = "Dieser Nutzername ist bereits vergeben!";
         Popup popup = new Popup();
         popup.show(getSupportFragmentManager(), "label");

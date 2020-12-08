@@ -42,10 +42,10 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button_help2"
+        android:id="@+id/button_statistics"
         android:layout_width="264dp"
         android:layout_height="60dp"
-        android:text="@string/help"
+        android:text="@string/statistics"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.503"

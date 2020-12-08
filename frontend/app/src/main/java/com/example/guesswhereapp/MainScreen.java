@@ -79,6 +79,7 @@ public class MainScreen extends AppCompatActivity {
             Button button_play = (Button) findViewById(R.id.button_play);
             Button button_options = (Button) findViewById(R.id.button_options);
             Button button_logout = (Button) findViewById(R.id.button_logout);
+            Button button_statistics = (Button) findViewById(R.id.button_statistics);
             TextView textview_greetuser = (TextView) findViewById(R.id.textview_greetuser);
 
             textview_greetuser.setText("Hallo, " + user.getUsername());
@@ -106,31 +107,43 @@ public class MainScreen extends AppCompatActivity {
                     startGameActivity();
                 }
             });
+
+            button_statistics.setOnClickListener(new View.OnClickListener() {
+                public void onClick(View view) {
+                    //textview_title.setText("Du hast die Optionen aufgerufen!");
+                    startStatisticsActivity();
+                }
+            });
         }
     }
 
-    public void startLoginActivity() {
+    private void startLoginActivity() {
         Intent intent = new Intent(this, LoginScreen.class);
         startActivity(intent);
     }
 
-    public void startOptionsActivity(){
+    private void startOptionsActivity(){
         OptionsScreen.whichscreen = 0; //reset so it always displays the default version
         Intent intent = new Intent(this, OptionsScreen.class);
         startActivity(intent);
     }
 
-    public void startHelpActivity(){
+    private void startHelpActivity(){
         Intent intent = new Intent(this, HelpScreen.class);
         startActivity(intent);
     }
 
-    public void startGameActivity(){
+    private void startStatisticsActivity(){
+        Intent intent = new Intent(this, HelpScreen.class);
+        startActivity(intent);
+    }
+
+    private void startGameActivity(){
         Intent intent = new Intent(this, GameScreen.class);
         startActivity(intent);
     }
 
-    public void openDialog() {
+    private void openDialog() {
         Popup popup = new Popup();
         popup.show(getSupportFragmentManager(), "label");
     }

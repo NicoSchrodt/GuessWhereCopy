@@ -11,10 +11,8 @@ public class User extends AppCompatActivity {
         AccessToken = AT;
     }
 
-    public String getUsername(){
-        return Username;
-    }
-    public String getAccessToken() { return AccessToken;}
+    public String getUsername(){return Username;}
+    public String getAccessToken(){return AccessToken;}
 
     public boolean checkCredentials(String User, String Password) {
         boolean UserValid = false;

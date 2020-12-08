@@ -98,6 +98,7 @@ public class MainScreen extends AppCompatActivity {
                     //textview_title.setText("Du hast die Optionen aufgerufen!");
                     user = null;
                     finish(); //closes MainActivity
+                    whichPopup = 3;
                     startActivity(getIntent()); //restarts Main
                 }
             });

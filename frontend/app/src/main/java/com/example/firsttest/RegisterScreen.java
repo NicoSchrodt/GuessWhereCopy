@@ -54,8 +54,11 @@ public class RegisterScreen extends AppCompatActivity {
 
         try {
             if (Database_test.create_user(Username, Password)){
-                MainScreen.user = User.new_user_instance(Username, Password);
+                String accesstoken = Database_test.request_access_token(Username, Password);
+                MainScreen.user = User.new_user_instance(Username, accesstoken);
                 reload_main();
+            } else {
+                openDialog();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -65,6 +68,13 @@ public class RegisterScreen extends AppCompatActivity {
     private void reload_main() {
         Intent intent = new Intent(RegisterScreen.this, MainScreen.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        MainScreen.whichPopup = 1;
         startActivity(intent);
+    }
+
+    public void openDialog() {
+        MainScreen.popupMessage = "Dieser Nutzername ist bereits vergeben!";
+        Popup popup = new Popup();
+        popup.show(getSupportFragmentManager(), "label");
     }
 }

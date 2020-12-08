@@ -55,6 +55,8 @@ public class LoginScreen extends AppCompatActivity {
             MainScreen.user = User.new_user_instance(Username, accesstoken);
             MainScreen.whichPopup = 2;
             reload_main();
+        } else {
+            openDialog();
         }
     }
 
@@ -63,5 +65,11 @@ public class LoginScreen extends AppCompatActivity {
         // set the new task and clear flags
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
+    }
+
+    public void openDialog() {
+        MainScreen.popupMessage = "Dein Nutzername existiert entweder nicht, oder dein Passwort war falsch!";
+        Popup popup = new Popup();
+        popup.show(getSupportFragmentManager(), "label");
     }
 }

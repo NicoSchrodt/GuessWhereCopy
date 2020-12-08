@@ -1,6 +1,4 @@
-package com.example.firsttest;
-
-import android.util.Log;
+package com.example.guesswhereapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 

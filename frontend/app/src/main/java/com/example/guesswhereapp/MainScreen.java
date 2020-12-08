@@ -1,4 +1,4 @@
-package com.example.firsttest;
+package com.example.guesswhereapp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,12 +6,9 @@ import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
-import java.io.IOException;
 
 @SuppressWarnings("SpellCheckingInspection")
 public class MainScreen extends AppCompatActivity {

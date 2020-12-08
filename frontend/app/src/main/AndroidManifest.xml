@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.firsttest">
+    package="com.example.guesswhereapp">
 
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -12,11 +12,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstTest"
         android:usesCleartextTraffic="true">
-        <activity android:name=".HelpScreen"></activity>
-        <activity android:name=".OptionsScreen" />
-        <activity android:name=".RegisterScreen" />
-        <activity android:name=".LoginScreen" />
-        <activity android:name=".MainScreen">
+        <activity android:name="com.example.guesswhereapp.GameScreen"></activity>
+        <activity android:name="com.example.guesswhereapp.HelpScreen" />
+        <activity android:name="com.example.guesswhereapp.OptionsScreen" />
+        <activity android:name="com.example.guesswhereapp.RegisterScreen" />
+        <activity android:name="com.example.guesswhereapp.LoginScreen" />
+        <activity android:name="com.example.guesswhereapp.MainScreen">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

@@ -1,4 +1,4 @@
-package com.example.firsttest;
+package com.example.guesswhereapp;
 
 import org.junit.Test;
 

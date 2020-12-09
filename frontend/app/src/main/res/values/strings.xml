@@ -18,4 +18,5 @@
     <string name="statistics">statistics</string>
     <string name="singleplayer">Singleplayer</string>
     <string name="challenge_user">Challenge User</string>
+    <string name="guess">Guess</string>
 </resources>

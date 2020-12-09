@@ -4,8 +4,12 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+
 import java.io.DataOutputStream;
 import java.io.IOException;
+import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -13,6 +17,7 @@ import java.nio.charset.StandardCharsets;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class Database_test extends AppCompatActivity {
 
@@ -281,5 +286,45 @@ public class Database_test extends AppCompatActivity {
 
         return status;
     }
+    /*
+    public static JSONArray requestStatistic(String accesstoken) throws IOException, JSONException {
+        String request        = "http://api.guesswhere.net/api.php?type=changepassword";
+        URL    url            = new URL( request );
+        HttpURLConnection conn= (HttpURLConnection) url.openConnection();
+
+        //Request-Header
+        String urlParameters  = "accesstoken=" + accesstoken;
+        byte[] postData       = urlParameters.getBytes( StandardCharsets.UTF_8 );
+        int    postDataLength = postData.length;
+        conn.setRequestMethod( "POST" );
+
+        //Send Post-Request
+        conn.setDoOutput(true);
+        conn.setRequestProperty( "charset", "utf-8");
+
+        DataOutputStream wr = new DataOutputStream(conn.getOutputStream());
+        wr.writeBytes(urlParameters);
+        wr.flush();
+        wr.close();
+
+        BufferedReader in = new BufferedReader(new InputStreamReader(conn.getInputStream()));
+        String inputLine;
+        StringBuilder response = new StringBuilder();
+
+        while ((inputLine = in.readLine()) != null) {
+            response.append(inputLine);
+        }
+        in.close();
+
+        ArrayList<String> listdata = new ArrayList<String>();
+        JSONArray jArray = (JSONArray) jsonObject;
+        if (jArray != null) {
+            for (int i=0;i<jArray.length();i++){
+                listdata.add(jArray.getString(i));
+            }
+        }
+        return null;
+    }
+    */
 }
 

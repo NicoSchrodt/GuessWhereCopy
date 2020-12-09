@@ -18,7 +18,6 @@ public class MainScreen extends AppCompatActivity {
     public MainScreen() {
     }
 
-
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,8 +43,6 @@ public class MainScreen extends AppCompatActivity {
 
             Button button_login = (Button) findViewById(R.id.button_login);
             Button button_help = (Button) findViewById(R.id.button_help);
-            TextView textview_title = (TextView) findViewById(R.id.textview_title);
-            textview_title.setText("Guesswhere");
 
             button_login.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
@@ -82,18 +79,16 @@ public class MainScreen extends AppCompatActivity {
             Button button_statistics = (Button) findViewById(R.id.button_statistics);
             TextView textview_greetuser = (TextView) findViewById(R.id.textview_greetuser);
 
-            textview_greetuser.setText("Hallo, " + user.getUsername());
+            textview_greetuser.setText("Hallo, " + user.getUsername() + "!");
 
             button_options.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
-                    //textview_title.setText("Du hast die Optionen aufgerufen!");
                     startOptionsActivity();
                 }
             });
 
             button_logout.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
-                    //textview_title.setText("Du hast die Optionen aufgerufen!");
                     user = null;
                     finish(); //closes MainActivity
                     whichPopup = 3;
@@ -103,14 +98,13 @@ public class MainScreen extends AppCompatActivity {
 
             button_play.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
-                    //textview_title.setText("Du hast die Optionen aufgerufen!");
+                    GameScreen.whichscreen = 0;//reset to selection screen
                     startGameActivity();
                 }
             });
 
             button_statistics.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
-                    //textview_title.setText("Du hast die Optionen aufgerufen!");
                     startStatisticsActivity();
                 }
             });
@@ -134,7 +128,7 @@ public class MainScreen extends AppCompatActivity {
     }
 
     private void startStatisticsActivity(){
-        Intent intent = new Intent(this, HelpScreen.class);
+        Intent intent = new Intent(this, StatisticsScreen.class);
         startActivity(intent);
     }
 

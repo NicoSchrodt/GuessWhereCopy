@@ -16,4 +16,6 @@
     <string name="new_password">New Password</string>
     <string name="todo">TODO</string>
     <string name="statistics">statistics</string>
+    <string name="singleplayer">Singleplayer</string>
+    <string name="challenge_user">Challenge User</string>
 </resources>

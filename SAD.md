@@ -9,41 +9,27 @@ using a number of different architectural views to depict different aspects of t
 It is intended to capture and convey the significant architectural decisions which have been made on the system.
 
 ### 1.2 Scope
-The scope of this SAD is to show the architecture of the Socialyze project. Affected are the class structure, the use cases and the data representation.
+The scope of this SAD is to show the architecture of the GuessWhere project. Affected are the class structure, the use cases and the data representation.
 
 ### 1.3 References
-- [GitHub](https://github.com/soshalyze)
-- [Blog](https://socialyze807275475.wordpress.com/)
-- [Overall Use case diagram](https://github.com/soshalyze/socialyze_doc/blob/master/usecase/use_case_diagram.png)
+- [GitHub](https://github.com/Eightdays1/guesswhere)
+- [Blog](https://guesswheregame.wordpress.com)
 - [Software Requirements Specification](SRS.MD)
-- [UC Create Account](markdown_CreateAccount.md)
-- [UC Login](markdown_Login.md)
-- [UC Retrieve Data from Server](markdown_ChooseVisualizationType.md)
-- [UC ChooseVisualization](markdown_RetrrieveDataFromServer.md)
-- [UC SelectDataset](markdown_SelectDataset.md)
+- [UC Challenge User](https://github.com/Eightdays1/guesswhere/blob/main/Use-Case_Challenge_User.md)
+- [UC Start Game](https://github.com/Eightdays1/guesswhere/blob/main/Use-Case_StartGame.md)
 
 
 ## 2. Architectural Representation
-Socialyze uses the MVD Pattern from Django for its architecture design.
-
-MVT Diagram: 
-- [MVT Pattern](https://github.com/soshalyze/socialyze_doc/blob/master/img_blog/Django_MVT-1-683x1024.jpg)
-
-
+n/a
 
 ## 3.Architectural Goals and Constraints 
-We decided to use praw for the back-end as a connection to reddit and Plotly for the front-end for the visualization of the dataset.
-Both components are coupled by the Rest-API. 
+n/a
 
 ## 4. Use-Case View 
 n/a
 
 ## 5. Logical View
-Templates aren´t no classes, in our project they are only HTML files.
-Our classes were only in model.py
-
-- [Diagram](https://github.com/soshalyze/socialyze_doc/blob/master/img_blog/LogicalView.png)
-
+n/a
 
 ## 6. Process View
 n/a
@@ -54,11 +40,10 @@ n/a
 n/a
 
 ## 9. Data View
-We're using the PostgreSQL database to store our data. 
-
+n/a
 
 ## 10. Size and Performance
-tbd
+n/a
 
 ## 11. Quality
-We use PyCharm as our IDE and Django as our webframework.
+n/a

@@ -1,4 +1,3 @@
-![Socialyze][]
 # Software Architecture Document
 
 

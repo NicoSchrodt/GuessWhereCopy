@@ -13,7 +13,7 @@ Displays the statisctic for the current user as well as the leaderboard.
 - If the user tabs "return" the main screen is shown.
 
 ### 2.1.1 Activity Diagram
-![Challange User](./images/UC_Statistics.png)
+![Challange User](../images/UC_Statistics.png)
 
 
 ## 2.2 Alternative Flows

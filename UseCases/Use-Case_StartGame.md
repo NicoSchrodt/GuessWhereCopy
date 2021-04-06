@@ -13,7 +13,7 @@ The user must have entered a username.
 - Selected gamemode starts
 
 ### 2.1.1 Activity Diagram
-![GameStart diagram](./images/UC_GameStart.png)
+![GameStart diagram](../images/UC_GameStart.png)
 
 
 ## 2.2 Alternative Flows

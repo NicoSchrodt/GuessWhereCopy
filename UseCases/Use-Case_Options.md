@@ -12,7 +12,7 @@ Lets the player change their username or password in the option-screen.
 - If the new username or password is not valid, a failure-message is shown. The user can try again.
 
 ### 2.1.1 Activity Diagram
-![Challange User](./images/UC_Options.png)
+![Challange User](../images/UC_Options.png)
 
 
 ## 2.2 Alternative Flows

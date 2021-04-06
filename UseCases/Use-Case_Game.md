@@ -14,7 +14,7 @@ Play a new game with random pictures/locations.
 - If it was the last round, show the overwiew to the user.
 
 ### 2.1.1 Activity Diagram
-![Challange User](./images/UC_Game.png)
+![Challange User](../images/UC_Game.png)
 
 
 ## 2.2 Alternative Flows

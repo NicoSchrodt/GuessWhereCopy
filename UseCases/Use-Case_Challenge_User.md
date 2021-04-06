@@ -13,7 +13,7 @@ To challenge another user, you first have to befriend them. After that you send 
 - At the end, compare the results of the game. Both users play the same game, which means they get the same pictures.
 
 ### 2.1.1 Activity Diagram
-![Challange User](./images/UC_ChallengeUser.png)
+![Challange User](../images/UC_ChallengeUser.png)
 
 
 ## 2.2 Alternative Flows

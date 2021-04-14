@@ -52,7 +52,7 @@ public class MainScreen extends AppCompatActivity {
 
             button_help.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
-                    startHelpActivity();
+                    startMapActivity();
                 }
             });
 
@@ -124,6 +124,11 @@ public class MainScreen extends AppCompatActivity {
 
     private void startHelpActivity(){
         Intent intent = new Intent(this, HelpScreen.class);
+        startActivity(intent);
+    }
+
+    private void startMapActivity(){
+        Intent intent = new Intent(this, MapActivity.class);
         startActivity(intent);
     }
 

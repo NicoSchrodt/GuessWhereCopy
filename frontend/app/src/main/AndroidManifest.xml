@@ -12,7 +12,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstTest"
         android:usesCleartextTraffic="true">
-        <activity android:name=".StatisticsScreen"></activity>
+        <activity android:name=".MapActivity"></activity>
+        <activity android:name=".StatisticsScreen" />
         <activity android:name=".GameScreen" />
         <activity android:name=".HelpScreen" />
         <activity android:name=".OptionsScreen" />

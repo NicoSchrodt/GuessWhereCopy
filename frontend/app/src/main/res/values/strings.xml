@@ -19,4 +19,5 @@
     <string name="singleplayer">Singleplayer</string>
     <string name="challenge_user">Challenge User</string>
     <string name="guess">Guess</string>
+    <string name="mapbox_access_token">pk.eyJ1IjoiZnVubnl4ZCIsImEiOiJja25nNTlyYzAyODB5MnBtcjMxczQ4ejN6In0.OjpUNBinh-trBdZ5tzqQTw</string>
 </resources>

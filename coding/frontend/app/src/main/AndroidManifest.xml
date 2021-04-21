@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.guesswhereapp">
 
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
@@ -12,7 +14,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.FirstTest"
         android:usesCleartextTraffic="true">
-        <activity android:name=".MapActivity"></activity>
+        <!--
+               Set to true if your app is Standalone, that is, it does not require the handheld
+               app to run.
+        -->
+
+        <activity
+            android:name=".LocationPickerActivity"
+            android:label="@string/title_activity_location_picker">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MapActivity" />
         <activity android:name=".StatisticsScreen" />
         <activity android:name=".GameScreen" />
         <activity android:name=".HelpScreen" />

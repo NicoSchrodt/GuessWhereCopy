@@ -2,6 +2,7 @@ package com.example.guesswhereapp;
 
 //package com.mapbox.mapboxandroiddemo.examples.labs;
 
+import android.content.Intent;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -275,10 +276,14 @@ public class LocationPickerActivity extends AppCompatActivity implements Permiss
                                     if (style.getLayer(DROPPED_MARKER_LAYER_ID) != null) {
                                         Toast.makeText(LocationPickerActivity.this,
                                                 String.format(getString(R.string.location_picker_place_name_result),
-                                                        feature.placeName()), Toast.LENGTH_SHORT).show();
+                                                        feature.center()), Toast.LENGTH_SHORT).show();//placeName()
                                     }
                                 }
                             });
+                            GameScreen.guessed_coordinate_1 = (float)feature.center().longitude();
+                            GameScreen.guessed_coordinate_2 = (float)feature.center().latitude();
+                            GameScreen.whichscreen = 3;
+                            startAnotherGameActivity();//replace Later
 
                         } else {
                             Toast.makeText(LocationPickerActivity.this,
@@ -318,5 +323,9 @@ public class LocationPickerActivity extends AppCompatActivity implements Permiss
             permissionsManager = new PermissionsManager(this);
             permissionsManager.requestLocationPermissions(this);
         }
+    }
+    private void startAnotherGameActivity() {
+        Intent intent = new Intent(this, GameScreen.class);
+        startActivity(intent);
     }
 }

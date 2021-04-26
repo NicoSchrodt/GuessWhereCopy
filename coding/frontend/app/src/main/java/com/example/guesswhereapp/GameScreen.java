@@ -9,15 +9,21 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 
+import static java.lang.Math.abs;
+
 public class GameScreen extends AppCompatActivity {
 
     public static float coordinate_1;
     public static float coordinate_2;
+
+    public static float guessed_coordinate_1;
+    public static float guessed_coordinate_2;
 
     public static int whichscreen = 0;
 
@@ -53,14 +59,34 @@ public class GameScreen extends AppCompatActivity {
                 if(Url != null){
                     Picasso.get().load(Url).into(imageView);
                 }
+                Button button_guess = (Button) findViewById(R.id.button_guess);
+
+                button_guess.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View view) {startLocationPickerActivity(); }
+                });
                 break;
             case 2://Challenge User
+                break;
+            case 3://GameOver
+                super.onCreate(savedInstanceState);
+                setContentView(R.layout.activity_game_result_screen);
+                float difference_x = abs(coordinate_1 - guessed_coordinate_1);
+                float difference_y = abs(coordinate_2 - guessed_coordinate_2);
+                TextView x_coord_result = (TextView) findViewById(R.id.x_coord_result);
+                TextView y_coord_result = (TextView) findViewById(R.id.y_coord_result);
+                x_coord_result.setText("Deine X-Koordinate war " + difference_x + " entfernt!");
+                y_coord_result.setText("Deine Y-Koordinate war , " + difference_y + " entfernt!");
                 break;
         }
     }
 
     private void startAnotherGameActivity() {
         Intent intent = new Intent(this, GameScreen.class);
+        startActivity(intent);
+    }
+
+    private void startLocationPickerActivity(){
+        Intent intent = new Intent(this, LocationPickerActivity.class);
         startActivity(intent);
     }
 }

@@ -102,9 +102,7 @@ public class MainScreen extends AppCompatActivity {
             });
 
             button_statistics.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {
-                    startStatisticsActivity();
-                }
+                public void onClick(View view) { startStatisticsActivity(); }
             });
         }
     }

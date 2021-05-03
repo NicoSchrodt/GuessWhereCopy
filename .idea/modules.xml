@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/guesswhere.iml" filepath="$PROJECT_DIR$/.idea/guesswhere.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/frontend/app/build.gradle/guesswhere.build.gradle.iml" filepath="$PROJECT_DIR$/.idea/modules/frontend/app/build.gradle/guesswhere.build.gradle.iml" />
     </modules>
   </component>
 </project>

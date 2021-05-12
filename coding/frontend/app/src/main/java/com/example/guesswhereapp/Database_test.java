@@ -232,10 +232,10 @@ public class Database_test extends AppCompatActivity {
                 image_url = i.substring(9);
             }
             if (i.startsWith("coordinate1:")){
-                GameScreen.coordinate_1 = Float.parseFloat(i.substring(12));
+                GameScreen.coordinate_2 = Float.parseFloat(i.substring(12));
             }
             if (i.startsWith("coordinate2:")){
-                GameScreen.coordinate_2 = Float.parseFloat(i.substring(12));
+                GameScreen.coordinate_1 = Float.parseFloat(i.substring(12));
             }
         }
 

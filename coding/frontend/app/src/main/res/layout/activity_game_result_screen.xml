@@ -11,18 +11,8 @@
         android:layout_width="191dp"
         android:layout_height="85dp"
         android:text="TextView"
-        app:layout_constraintBottom_toTopOf="@+id/y_coord_result"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/y_coord_result"
-        android:layout_width="192dp"
-        android:layout_height="132dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

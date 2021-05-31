@@ -89,6 +89,16 @@ public class GameScreen extends AppCompatActivity {
                 TextView x_coord_result = (TextView) findViewById(R.id.x_coord_result);
                 x_coord_result.setText("Dein Tipp war " + round(d) + " Kilometer entfernt!");
                 //x_coord_result.setText("Deine X-Koordinate war " + difference_x + " entfernt!");
+
+                Button button_play_again = (Button) findViewById(R.id.button_play_again);
+                Button button_main_menu = (Button) findViewById(R.id.button_main_menu);
+                button_play_again.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View view) {playAnotherGame(); }
+                });
+                button_main_menu.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View view) {toMainMenu(); }
+                });
+
                 break;
         }
     }
@@ -100,6 +110,21 @@ public class GameScreen extends AppCompatActivity {
 
     private void startLocationPickerActivity(){
         Intent intent = new Intent(this, LocationPickerActivity.class);
+        startActivity(intent);
+    }
+
+    private void playAnotherGame(){
+        Intent intent = new Intent(GameScreen.this, MainScreen.class);
+        // set the new task and clear flags
+        MainScreen.play_another_game = 1;
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    private void toMainMenu(){
+        Intent intent = new Intent(GameScreen.this, MainScreen.class);
+        // set the new task and clear flags
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 }

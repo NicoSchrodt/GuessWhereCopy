@@ -50,7 +50,7 @@ public class LoginScreen extends AppCompatActivity {
             e.printStackTrace();
         }
         if(!(accesstoken.equals(""))) {
-            MainScreen.user = User.new_user_instance(Username, accesstoken);
+            MainScreen.user = User.factory(Username, accesstoken);
             MainScreen.whichPopup = 2;
             reload_main();
         } else {

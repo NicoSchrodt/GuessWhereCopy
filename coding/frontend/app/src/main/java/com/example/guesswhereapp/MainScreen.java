@@ -15,6 +15,7 @@ public class MainScreen extends AppCompatActivity {
     public static User user = null;
     public static int whichPopup = 0;
     public static String popupMessage = "";
+    public static int play_another_game = 0;
     public MainScreen() {
     }
 
@@ -58,32 +59,38 @@ public class MainScreen extends AppCompatActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_main_loggedin);
 
-            if(whichPopup != 0){
-                switch(whichPopup){
-                    case 1:
-                        popupMessage = "You sucessfully registered!";
-                        break;
-                    case 2:
-                        popupMessage = "You sucessfully logged in!";
-                        break;
+            if(play_another_game == 1){
+                play_another_game = 0;
+                GameScreen.whichscreen = 1;
+                startGameActivity();
+            } else {
+                if (whichPopup != 0) {
+                    switch (whichPopup) {
+                        case 1:
+                            popupMessage = "You sucessfully registered!";
+                            break;
+                        case 2:
+                            popupMessage = "You sucessfully logged in!";
+                            break;
+                    }
+                    openDialog();
+                    whichPopup = 0;
                 }
-                openDialog();
-                whichPopup = 0;
-            }
 
-            Button button_play = (Button) findViewById(R.id.button_play);
-            Button button_options = (Button) findViewById(R.id.button_options);
-            Button button_logout = (Button) findViewById(R.id.button_logout);
-            Button button_statistics = (Button) findViewById(R.id.button_statistics);
-            TextView textview_greetuser = (TextView) findViewById(R.id.textview_greetuser);
+                Button button_play = (Button) findViewById(R.id.button_play);
+                Button button_options = (Button) findViewById(R.id.button_options);
+                Button button_logout = (Button) findViewById(R.id.button_logout);
+                Button button_statistics = (Button) findViewById(R.id.button_statistics);
+                TextView textview_greetuser = (TextView) findViewById(R.id.textview_greetuser);
 
-            textview_greetuser.setText("Hallo, " + user.getUsername() + "!");
+                textview_greetuser.setText("Hallo, " + user.getUsername() + "!");
 
-            button_options.setOnClickListener(new View.OnClickListener() {
-                public void onClick(View view) {
-                    startOptionsActivity();
-                }
-            });
+                button_options.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View view) {
+                        startOptionsActivity();
+                    }
+
+                });
 
             button_logout.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) {
@@ -104,6 +111,7 @@ public class MainScreen extends AppCompatActivity {
             button_statistics.setOnClickListener(new View.OnClickListener() {
                 public void onClick(View view) { startStatisticsActivity(); }
             });
+            }
         }
     }
 

@@ -34,7 +34,7 @@ public class RegisterScreen extends AppCompatActivity {
         try {
             if (Database_test.create_user(Username, Password)){
                 String accesstoken = Database_test.request_access_token(Username, Password);
-                MainScreen.user = User.new_user_instance(Username, accesstoken);
+                MainScreen.user = User.factory(Username, accesstoken);
                 reload_main();
             } else {
                 openDialog();

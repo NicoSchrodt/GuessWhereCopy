@@ -1,151 +1,81 @@
 @startuml
 
-title __GUESSWHEREAPP's Class Diagram__\n
+title __FIRSTTEST.APP's Class Diagram__\n
+
+  namespace com.example.guesswhereapp {
+    class com.example.guesswhereapp.BuildConfig {
+    }
+  }
+  
 
   namespace com.example.guesswhereapp {
     class com.example.guesswhereapp.Database_test {
-        {static} + changePassword()
-        {static} + create_user()
-        {static} + database_check()
-        {static} + getNewImage()
-        {static} + request_access_token()
     }
   }
   
 
   namespace com.example.guesswhereapp {
     class com.example.guesswhereapp.GameScreen {
-        {static} + coordinate_1 : float
-        {static} + coordinate_2 : float
-        {static} + guessed_coordinate_1 : float
-        {static} + guessed_coordinate_2 : float
-        {static} + whichscreen : int
-        ~ imageView : ImageView
-        # onCreate()
-        - startAnotherGameActivity()
-        - startLocationPickerActivity()
     }
   }
   
 
   namespace com.example.guesswhereapp {
     class com.example.guesswhereapp.HelpScreen {
-        + returnToMain()
-        # onCreate()
     }
   }
   
 
   namespace com.example.guesswhereapp {
     class com.example.guesswhereapp.LocationPickerActivity {
-        {static} - DROPPED_MARKER_LAYER_ID : String
-        - droppedMarkerLayer : Layer
-        - hoveringMarker : ImageView
-        - mapView : MapView
-        - mapboxMap : MapboxMap
-        - permissionsManager : PermissionsManager
-        - selectLocationButton : Button
-        + onExplanationNeeded()
-        + onLowMemory()
-        + onMapReady()
-        + onPause()
-        + onPermissionResult()
-        + onRequestPermissionsResult()
-        + onResume()
-        # onCreate()
-        # onDestroy()
-        # onSaveInstanceState()
-        # onStart()
-        # onStop()
-        - enableLocationPlugin()
-        - initDroppedMarker()
-        - reverseGeocode()
-        - startAnotherGameActivity()
     }
   }
   
 
   namespace com.example.guesswhereapp {
     class com.example.guesswhereapp.LoginScreen {
-        + openDialog()
-        + startRegisterActivity()
-        # onCreate()
-        - login()
-        - reload_main()
     }
   }
   
 
   namespace com.example.guesswhereapp {
     class com.example.guesswhereapp.MainScreen {
-        {static} + popupMessage : String
-        {static} + user : User
-        {static} + whichPopup : int
-        + MainScreen()
-        # onCreate()
-        - openDialog()
-        - startGameActivity()
-        - startHelpActivity()
-        - startLocationPickerActivity()
-        - startLoginActivity()
-        - startMapActivity()
-        - startOptionsActivity()
-        - startStatisticsActivity()
     }
   }
   
 
   namespace com.example.guesswhereapp {
     class com.example.guesswhereapp.MapActivity {
-        + mapboxMap : MapboxMap
-        - mapView : MapView
-        # onCreate()
     }
   }
   
 
   namespace com.example.guesswhereapp {
     class com.example.guesswhereapp.OptionsScreen {
-        {static} + whichscreen : int
-        # onCreate()
-        - openDialog()
-        - startAnotherOptionsActivity()
     }
   }
   
 
   namespace com.example.guesswhereapp {
     class com.example.guesswhereapp.Popup {
-        + onCreateDialog()
     }
   }
   
 
   namespace com.example.guesswhereapp {
     class com.example.guesswhereapp.RegisterScreen {
-        # onCreate()
-        - openDialog()
-        - reload_main()
-        - try_creating_user()
     }
   }
   
 
   namespace com.example.guesswhereapp {
     class com.example.guesswhereapp.StatisticsScreen {
-        # onCreate()
     }
   }
   
 
   namespace com.example.guesswhereapp {
     class com.example.guesswhereapp.User {
-        - AccessToken : String
-        - Username : String
-        {static} + factory()
-        + getAccessToken()
-        + getUsername()
-        - User()
     }
   }
   

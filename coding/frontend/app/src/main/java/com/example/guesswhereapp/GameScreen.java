@@ -3,8 +3,6 @@ package com.example.guesswhereapp;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
-import android.graphics.Bitmap;
-import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -16,6 +14,7 @@ import com.squareup.picasso.Picasso;
 import java.io.IOException;
 
 import static java.lang.Math.abs;
+import static java.lang.Math.round;
 
 public class GameScreen extends AppCompatActivity {
 
@@ -70,12 +69,34 @@ public class GameScreen extends AppCompatActivity {
             case 3://GameOver
                 super.onCreate(savedInstanceState);
                 setContentView(R.layout.activity_game_result_screen);
+
+                //calculate distance 'd' in kilometres
+                final double radius = 6371000;
+                final double lat1 = coordinate_2 * Math.PI/180;
+                final double lat2 = guessed_coordinate_2 * Math.PI/180;
+                final double diff_lat = (guessed_coordinate_2 - coordinate_2) * Math.PI/180;
+                final double diff_lon = (guessed_coordinate_1 - coordinate_1) * Math.PI/180;
+
+                final double a = Math.sin(diff_lat/2) * Math.sin(diff_lat/2) + Math.cos(lat1) * Math.cos(lat2) * Math.sin(diff_lon/2) * Math.sin(diff_lon/2);
+                final double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+                final double d = radius * c / 1000; // in kilometres
+
                 float difference_x = abs(coordinate_1 - guessed_coordinate_1);
                 float difference_y = abs(coordinate_2 - guessed_coordinate_2);
+
                 TextView x_coord_result = (TextView) findViewById(R.id.x_coord_result);
-                TextView y_coord_result = (TextView) findViewById(R.id.y_coord_result);
-                x_coord_result.setText("Deine X-Koordinate war " + difference_x + " entfernt!");
-                y_coord_result.setText("Deine Y-Koordinate war , " + difference_y + " entfernt!");
+                x_coord_result.setText("Dein Tipp war " + round(d) + " Kilometer entfernt!");
+                //x_coord_result.setText("Deine X-Koordinate war " + difference_x + " entfernt!");
+
+                Button button_play_again = (Button) findViewById(R.id.button_play_again);
+                Button button_main_menu = (Button) findViewById(R.id.button_main_menu);
+                button_play_again.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View view) {playAnotherGame(); }
+                });
+                button_main_menu.setOnClickListener(new View.OnClickListener() {
+                    public void onClick(View view) {toMainMenu(); }
+                });
+
                 break;
         }
     }
@@ -87,6 +108,21 @@ public class GameScreen extends AppCompatActivity {
 
     private void startLocationPickerActivity(){
         Intent intent = new Intent(this, LocationPickerActivity.class);
+        startActivity(intent);
+    }
+
+    private void playAnotherGame(){
+        Intent intent = new Intent(GameScreen.this, MainScreen.class);
+        // set the new task and clear flags
+        MainScreen.play_another_game = 1;
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+        startActivity(intent);
+    }
+
+    private void toMainMenu(){
+        Intent intent = new Intent(GameScreen.this, MainScreen.class);
+        // set the new task and clear flags
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 }

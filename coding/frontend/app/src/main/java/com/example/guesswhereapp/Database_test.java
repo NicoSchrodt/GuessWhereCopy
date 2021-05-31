@@ -4,20 +4,14 @@ import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-
 import java.io.DataOutputStream;
 import java.io.IOException;
-import java.lang.reflect.Array;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.nio.charset.StandardCharsets;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.util.ArrayList;
 
 public class Database_test extends AppCompatActivity {
 
@@ -232,10 +226,10 @@ public class Database_test extends AppCompatActivity {
                 image_url = i.substring(9);
             }
             if (i.startsWith("coordinate1:")){
-                GameScreen.coordinate_1 = Float.parseFloat(i.substring(12));
+                GameScreen.coordinate_2 = Float.parseFloat(i.substring(12));
             }
             if (i.startsWith("coordinate2:")){
-                GameScreen.coordinate_2 = Float.parseFloat(i.substring(12));
+                GameScreen.coordinate_1 = Float.parseFloat(i.substring(12));
             }
         }
 
